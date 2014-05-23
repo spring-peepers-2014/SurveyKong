@@ -1,4 +1,8 @@
 class User < ActiveRecord::Base
+  has_many :created_surveys, class_name: "Survey"
+  has_many :completed_surveys
+  has_many :taken_surveys, through: :completed_surveys, source: :survey
+
   validates :email, presence: true
   validates :email, uniqueness: true
   validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i, :on => :save
@@ -17,7 +21,6 @@ class User < ActiveRecord::Base
 
   def create
     @user = User.new(params[:user])
-    if there is a :password field in the :users table migration
     @user.password = params[:password]
     @user.save!
   end
