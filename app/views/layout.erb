@@ -18,6 +18,18 @@
   <title>Welcome to SurveyKong</title>
 </head>
 <body>
+  <header>
+    <div><h1>Survey Kong</h1></div>
+    <!-- if !current_user -->
+    <div class="login">
+      <a href="#">Sign in</a>
+      <a href="#">Log out</a> 
+    </div>
+    <!-- else -->
+    <!-- end -->
+    
+  </header> 
+  
   <%= yield %>
 </body>
 </html>

@@ -1,6 +1,37 @@
 .container {
-  margin: 20px auto;
+  margin: 100px auto;
   width: 720px;
   padding: 0px 20px 20px 20px;
   border: 1px dotted black;
+}
+
+
+header {
+	background: #3A3732;
+	color: white;
+	width: 100%;
+	height: 50px;
+	padding-top: 10px;
+	position: fixed;
+	top: 0;
+}
+
+header h1 {
+	margin: 0;
+	margin-left: 40px;
+}
+
+header div {
+	width: 45%;
+	display: inline-block;
+}
+
+div a {
+	color: white;
+	margin-left: 20px;
+	text-decoration: none;
+}
+
+header div:last-of-type {
+	text-align: right;
 }
