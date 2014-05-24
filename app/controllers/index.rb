@@ -1,6 +1,6 @@
 get '/' do
 
-  @surveys = %w(BestBeer BestCar BestDate)
+  @surveys = Survey.all
 
   erb :index
 end
