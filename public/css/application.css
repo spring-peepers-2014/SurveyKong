@@ -26,12 +26,20 @@ header div {
 	display: inline-block;
 }
 
-div a {
+header div a {
 	color: white;
 	margin-left: 20px;
 	text-decoration: none;
 }
 
+header div a:hover {
+	color: yellow;
+}
 header div:last-of-type {
 	text-align: right;
 }
+
+a, li {
+	list-style-type: none;
+	text-decoration: none;
+} 

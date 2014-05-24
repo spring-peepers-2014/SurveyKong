@@ -1,5 +1,8 @@
 get '/' do
-  erb :login
+
+  @surveys = %w(BestBeer BestCar BestDate)
+
+  erb :index
 end
 
 get '/user/new' do
