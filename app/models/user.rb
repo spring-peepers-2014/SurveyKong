@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+
   has_many :created_surveys, class_name: "Survey"
   has_many :completed_surveys
   has_many :taken_surveys, through: :completed_surveys, source: :survey

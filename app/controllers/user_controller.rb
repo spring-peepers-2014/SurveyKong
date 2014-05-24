@@ -1,26 +1,45 @@
 
-# User Sign In
+
+# ================= User Sign In & Sign up page ======================
+
 get '/login' do
   erb :user_sign_in_up
 end
 
-post '/login' do
-  user = User.authenticate(email: params[:email], password: params[:password])
+# ================= User Sign UP =================================
 
-  if user
+post '/sign_up' do
+  user = User.new(params[:signup])
+
+  if user.save
     session[:user_id] = user.id
-    redirect to "/user/#{user.id}"
+    redirect to "/user/surveys"
   else
-    redirect to '/'
+    redirect to '/login'
   end
 end
 
+# ================= User Sign In =================================
 
-post '/logout' do
-  session[:user_id] = nil
-  redirect to '/'
+post '/sign_in' do
+  user = User.authenticate(params[:signin])
+
+  if user
+    session[:user_id] = user.id
+    redirect to "/user/surveys"
+  else
+    redirect '/login'
+  end
 end
 
+# ================ User Log Out ================================
+
+delete '/logout' do
+
+  session.clear
+
+  redirect to '/'
+end
 
 # Logged in users can view own profile only
 # get '/user/:user_id' do
@@ -74,13 +93,13 @@ end
 #   end
 # end
 
-post '/logout' do
-  session[:user_id] = nil
-  redirect to '/'
-end
+# post '/logout' do
+#   session[:user_id] = nil
+#   redirect to '/'
+# end
 
-# for development debugging only
-get '/logout' do
-  session[:user_id] = nil
-  redirect to '/'
-end
+# # for development debugging only
+# get '/logout' do
+#   session[:user_id] = nil
+#   redirect to '/'
+# end
