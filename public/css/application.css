@@ -42,4 +42,9 @@ header div:last-of-type {
 a, li {
 	list-style-type: none;
 	text-decoration: none;
-} 
+}
+
+#logout {
+	border: none;
+	border-radius: 20px;
+}
