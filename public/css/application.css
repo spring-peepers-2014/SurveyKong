@@ -3,9 +3,11 @@
   width: 720px;
   padding: 0px 20px 20px 20px;
   border: 1px dotted black;
+  background-color: #6D57B3;
+  border-radius: 20px;
 }
 
-
+/* Header navigation ========================= */
 header {
 	background: #3A3732;
 	color: white;
@@ -16,7 +18,11 @@ header {
 	top: 0;
 }
 
-header h1 {
+header div:first-of-type {
+	font-size: 38px;
+}
+
+header > h1 {
 	margin: 0;
 	margin-left: 40px;
 }
@@ -46,5 +52,32 @@ a, li {
 
 #logout {
 	border: none;
+
 	border-radius: 20px;
 }
+
+/* Sign in & Sign up ================================ */
+
+form {
+	height: 250px;
+}
+
+.sign input {
+	width: 90%;
+	margin: 10px 0;
+}
+
+.login {
+	/* Safari and Chrome */
+	height: 350px;
+	-webkit-column-count:2;
+	-webkit-column-gap:50px;
+	-webkit-column-rule: 4px outset #ff00ff;
+}
+/*	width: 45%;
+	display: inline-table;
+	padding: 0 15px;
+	border-left: 1px solid;*/
+
+
+

@@ -19,12 +19,15 @@
 </head>
 <body>
   <header>
-    <div><h1>Survey Kong</h1></div>
+    <div>
+      <a href="/">Survey Kong</a>
+    </div>
     <div>
       <% if !current_user %>
         <a href="/login">Sign in</a>
       <% else %>
-      <form action="/login" method="post">
+      <form action="/logout" method="post">
+        <input type="hidden" name="_method" value="delete">
         <input type="submit" value="Log out" id="logout">
       </form>
       <% end %>
