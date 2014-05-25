@@ -1,0 +1,15 @@
+<div class="container">
+  <h1><%= params[:title] %></h1>
+
+  <form action="/survey/completed" method="post" class="question">
+    <% @survey.questions.each do |question| %>
+      <p>Question: <%= question.q_text %></p>
+      <% question.options.each do |option| %>
+        <input type="radio" name="option[<%= question.q_text %>]" value="<%= option.id %>"> <%= option.o_text %>
+      <% end %>
+    <% end %>
+    <br><br><br><br>
+    <input type="submit" value="Submit!">
+  </form>
+
+</div>
