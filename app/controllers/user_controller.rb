@@ -1,11 +1,7 @@
 # ================= Sign up =================================
 
 post '/user/new' do
-  user_info = { first_name: params[:first_name],
-                last_name: params[:last_name],
-                email: params[:email],
-                password: params[:password] }
-  user = User.new(user_info)
+  user = User.new(params[:signup])
 
   if user.save
     session[:user_id] = user.id
@@ -18,10 +14,7 @@ end
 # ================= Sign In =================================
 
 post '/login' do
-  user_info = { email: params[:email],
-                password: params[:password] }
-
-  user = User.authenticate(user_info)
+  user = User.authenticate(params[:login])
 
   if user
     session[:user_id] = user.id
