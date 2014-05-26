@@ -37,13 +37,13 @@ post '/survey/complete' do
     Response.create(option_id: option)
     @survey_id = option.question_id
   end
-  @survey_title =
-  redirect '/survey/:title/results'
+  survey_title = params[:title]
+  redirect "/survey/#{survey_title}/results"
 end
 
 get '/survey/:title' do
   @survey = Survey.find_by(title: params[:title])
-  erb :"/survey/survey"
+  erb :"/survey/take_survey"
 end
 
 
