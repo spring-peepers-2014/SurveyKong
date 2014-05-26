@@ -1,6 +1,4 @@
 get '/' do
-
-  @surveys = Survey.all
-
+  session.clear
   erb :index
 end

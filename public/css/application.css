@@ -7,6 +7,19 @@
   border-radius: 20px;
 }
 
+#kong {
+	margin: 0 auto;
+	margin-top: 100px;
+	width: 400px;
+}
+
+#enter {
+	text-align: center;
+	postion: relative;
+	top: 10px;
+	right: 0;
+}
+
 /* Header navigation ========================= */
 header {
 	background: #3A3732;
@@ -41,6 +54,7 @@ header div a {
 header div a:hover {
 	color: yellow;
 }
+
 header div:last-of-type {
 	text-align: right;
 }
@@ -48,6 +62,7 @@ header div:last-of-type {
 a, li {
 	list-style-type: none;
 	text-decoration: none;
+	color: white;
 }
 
 #logout {
@@ -58,10 +73,10 @@ a, li {
 
 /* Sign in & Sign up ================================ */
 
-form {
-	height: 250px;
+h2 {
+	margin-top: 90px;
+	text-align: center;
 }
-
 .sign input {
 	width: 90%;
 	margin: 10px 0;
@@ -74,10 +89,28 @@ form {
 	-webkit-column-gap:50px;
 	-webkit-column-rule: 4px outset #ff00ff;
 }
-/*	width: 45%;
-	display: inline-table;
-	padding: 0 15px;
-	border-left: 1px solid;*/
 
+.question {
+	text-align: center;
+}
 
+.question p	{
+	font-size: 24px;
+}
 
+table {
+	width: 100%;
+}
+
+td {
+	text-align: center;
+}
+
+#chart_div {
+	margin: 50px auto;
+}
+
+#addQuestion {
+	float: right;
+	margin-top: -40px;
+}
