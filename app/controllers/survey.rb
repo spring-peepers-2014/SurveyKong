@@ -4,13 +4,13 @@ get '/surveys' do
 
   @surveys = Survey.order('created_at DESC')
 
-  erb :all_surveys
+  erb :"/survey/all_surveys"
 end
 
 # ============== Create Survey =====================
 
 get '/survey/new' do
-  erb :new_survey
+  erb :"/survey/new_survey"
 end
 
 post '/survey/new' do
@@ -43,12 +43,12 @@ end
 
 get '/survey/:title' do
   @survey = Survey.find_by(title: params[:title])
-  erb :survey
+  erb :"/survey/survey"
 end
 
 
 # ================= Survey Result ===================
 get '/survey/:title/results' do
   @survey = Survey.find_by(title: params[:title])
-  erb :survey_result
+  erb :"/survey/survey_result"
 end
