@@ -3,9 +3,24 @@
   width: 720px;
   padding: 0px 20px 20px 20px;
   border: 1px dotted black;
+  background-color: #6D57B3;
+  border-radius: 20px;
 }
 
+#kong {
+	margin: 0 auto;
+	margin-top: 100px;
+	width: 400px;
+}
 
+#enter {
+	text-align: center;
+	postion: relative;
+	top: 10px;
+	right: 0;
+}
+
+/* Header navigation ========================= */
 header {
 	background: #3A3732;
 	color: white;
@@ -16,7 +31,11 @@ header {
 	top: 0;
 }
 
-header h1 {
+header div:first-of-type {
+	font-size: 38px;
+}
+
+header > h1 {
 	margin: 0;
 	margin-left: 40px;
 }
@@ -35,6 +54,7 @@ header div a {
 header div a:hover {
 	color: yellow;
 }
+
 header div:last-of-type {
 	text-align: right;
 }
@@ -42,9 +62,55 @@ header div:last-of-type {
 a, li {
 	list-style-type: none;
 	text-decoration: none;
+	color: white;
 }
 
 #logout {
 	border: none;
+
 	border-radius: 20px;
+}
+
+/* Sign in & Sign up ================================ */
+
+h2 {
+	margin-top: 90px;
+	text-align: center;
+}
+.sign input {
+	width: 90%;
+	margin: 10px 0;
+}
+
+.login {
+	/* Safari and Chrome */
+	height: 350px;
+	-webkit-column-count:2;
+	-webkit-column-gap:50px;
+	-webkit-column-rule: 4px outset #ff00ff;
+}
+
+.question {
+	text-align: center;
+}
+
+.question p	{
+	font-size: 24px;
+}
+
+table {
+	width: 100%;
+}
+
+td {
+	text-align: center;
+}
+
+#chart_div {
+	margin: 50px auto;
+}
+
+#addQuestion {
+	float: right;
+	margin-top: -40px;
 }

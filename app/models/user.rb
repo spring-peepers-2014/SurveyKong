@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+
   has_many :created_surveys, class_name: "Survey"
   has_many :completed_surveys
   has_many :taken_surveys, through: :completed_surveys, source: :survey
@@ -35,7 +36,7 @@ class User < ActiveRecord::Base
   end
 
   def get_name
-    self.first_name
+    "#{self.first_name} #{self.last_name}"
   end
 
 end
