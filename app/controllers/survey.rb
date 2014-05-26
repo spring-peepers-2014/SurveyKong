@@ -25,32 +25,30 @@ post '/survey/new' do
         Option.create(o_text: choice, question: question)
       end
     end
-    redirect to "/survey/#{new_survey.title}"
+  end
+  redirect to "/survey/#{new_survey.title}"
 end
 
 # ============ Show the questions and Options =============
 
-post '/survey/completed' do
+post '/survey/complete' do
 
-  params[:option].each_value do |option_id|
-    Response.create(option_id: option_id)
+  params[:option].each_value do |option|
+    Response.create(option_id: option)
+    @survey_id = option.question_id
   end
-
-  redirect '/surveys'
+  @survey_title =
+  redirect '/survey/:title/results'
 end
 
 get '/survey/:title' do
-
   @survey = Survey.find_by(title: params[:title])
-
-  erb :survey_questions
+  erb :survey
 end
 
 
 # ================= Survey Result ===================
-get '/survey/:id/result' do
-
-  @survey = Survey.find(params[:id])
-
+get '/survey/:title/results' do
+  @survey = Survey.find_by(title: params[:title])
   erb :survey_result
 end

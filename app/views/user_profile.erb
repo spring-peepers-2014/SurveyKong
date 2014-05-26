@@ -16,7 +16,7 @@
 
     <% current_user.created_surveys.each do |survey| %>
     <tr>
-      <td><a href="/survey/<%= survey.id %>/result"><%= survey.title %></td>
+      <td><a href="/survey/<%= survey.title %>/result"><%= survey.title %></td>
       <td><a href="/survey/:id/edit">Edit</a></td>
       <td><a href="/survey/delete">Delete</a></td>
     </tr>
