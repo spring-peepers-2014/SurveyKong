@@ -98,6 +98,10 @@ h2 {
 	text-align: center;
 }
 
+label {
+	font-weight: bold;
+}
+
 input {
 	padding: 10px;
 	border-radius: 10px;
