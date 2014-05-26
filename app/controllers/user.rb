@@ -49,7 +49,7 @@ end
 
 # Anyone can view user profiles
 # Logged in users can view own profile with additional features
-
+# 
 # get '/user/:user_id' do
 #   user_id = params[:user_id]
 #   @user = User.find(user_id) if User.exists?(user_id)
