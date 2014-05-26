@@ -13,7 +13,7 @@ post '/sign_up' do
 
   if user.save
     session[:user_id] = user.id
-    redirect to "/user/surveys"
+    redirect to "/surveys"
   else
     redirect to '/login'
   end
@@ -26,7 +26,7 @@ post '/sign_in' do
 
   if user
     session[:user_id] = user.id
-    redirect to "/user/surveys"
+    redirect to "/surveys"
   else
     redirect '/login'
   end
@@ -34,7 +34,7 @@ end
 
 # ================ User Log Out ================================
 
-delete '/logout' do
+get '/logout' do
 
   session.clear
 
