@@ -1,0 +1,29 @@
+<div class="container">
+
+<h1>Welcome! <%= current_user.get_name %></h1>
+
+  <a href="/survey/new">Create survey</a>
+
+  <h2>Your Survey</h2>
+
+  <table>
+    <tr>
+      <th>Title</th>
+
+      <th>Update?</th>
+      <th>Delete?</th>
+    </tr>
+
+    <% current_user.created_surveys.each do |survey| %>
+    <tr>
+      <td><a href="/survey/<%= survey.id %>/result"><%= survey.title %></td>
+      <td><a href="/survey/:id/edit">Edit</a></td>
+      <td><a href="/survey/delete">Delete</a></td>
+    </tr>
+    <% end %>
+
+  </table>
+
+
+
+</div>

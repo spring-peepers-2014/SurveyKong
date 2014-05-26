@@ -7,6 +7,26 @@ get '/surveys' do
   erb :survey_read
 end
 
+# ============== Create Survey =====================
+
+get '/survey/new' do
+
+  erb :survey_create
+end
+
+post '/survey/new' do
+
+  survey_new = Survey.create(title: params[:title], creator: current_user)
+  hash = {}
+  params[:question].each do |key, question_value|
+      question = Question.create(q_text: question_value, survey: survey_new)
+    params[:choice][key].split(",").each do |choice|
+      Option.create(o_text: choice, question: question)
+    end
+  end
+  p params
+   # redirect '/surveys'
+end
 
 # ============ Show the questions and Options =============
 

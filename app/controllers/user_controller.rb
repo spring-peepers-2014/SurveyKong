@@ -9,7 +9,7 @@ post '/user/new' do
 
   if user.save
     session[:user_id] = user.id
-    redirect to "/user/surveys"
+    redirect to "/surveys"
   else
     redirect to '/login'
   end
