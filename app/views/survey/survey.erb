@@ -1,7 +1,7 @@
 <div class="container">
-  <h1><%= params[:title] %></h1>
+  <h1><%= @survey.title %></h1>
 
-  <form action="/survey/completed" method="post" class="question">
+  <form action="/survey/complete" method="post" class="question">
     <% @survey.questions.each do |question| %>
       <p>Question: <%= question.q_text %></p>
       <% question.options.each do |option| %>
@@ -9,7 +9,8 @@
       <% end %>
     <% end %>
     <br><br><br><br>
-    <input type="submit" value="Submit!">
+    <input type="hidden" value="<%= @survey.title %>" name="title">
+    <input type="submit" value="Submit">
   </form>
 
 </div>

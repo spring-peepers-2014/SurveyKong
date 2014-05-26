@@ -9,10 +9,10 @@
     <form action="/login" method="post" class="sign">
 
       <label for="email">Email:</label>
-      <input name="email" id="email" placeholder="dbc@example.com">
+      <input name="login[email]" id="email" placeholder="dbc@example.com">
 
       <label for="password">Password:</label>
-      <input type="password" name="password" id="password" placeholder="password">
+      <input type="password" name="login[password]" id="password" placeholder="password">
 
       <input type="submit" value="Log in">
 
@@ -23,16 +23,16 @@
     <form action="/user/new" method="post" class="sign">
 
       <label for="first_name">First Name:</label>
-      <input name="first_name" id="first_name" placeholder="John">
+      <input name="signup[first_name]" id="first_name" placeholder="John">
 
       <label for="last_name">Last Name:</label>
-      <input name="last_name" id="last_name" placeholder="Smith">
+      <input name="signup[last_name"] id="last_name" placeholder="Smith">
 
       <label for="email">Email:</label>
-      <input name="email" id="email" placeholder="dbc@example.com">
+      <input name="signup[email]" id="email" placeholder="dbc@example.com">
 
       <label for="password">Password:</label>
-      <input type="password" name="password" id="password" placeholder="password">
+      <input type="signup[password]" name="password" id="password" placeholder="password">
 
       <input type="submit" value="Create my account!">
 

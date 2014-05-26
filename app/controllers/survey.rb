@@ -52,4 +52,3 @@ get '/survey/:title/results' do
   @survey = Survey.find_by(title: params[:title])
   erb :"/survey/survey_result"
 end
-# 

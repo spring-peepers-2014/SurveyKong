@@ -6,11 +6,13 @@
     differences in how form elements appear between Firefox and IE
     See: http://necolas.github.com/normalize.css/
   -->
+  <link href='http://fonts.googleapis.com/css?family=Anton|Droid+Sans:400,700' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="/css/normalize.css">
+  <link rel="stylesheet" href="/css/application.css">
+  <link rel="stylesheet" type="text/css" href="/css/surveykong.css">
   <!--
     application.css is where you put your styles
   -->
-  <link rel="stylesheet" href="/css/application.css">
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script type="text/javascript" src="https://www.google.com/jsapi"></script>
   <script src="/js/application.js"></script>
@@ -22,13 +24,13 @@
     <div>
       <a href="/">Survey Kong</a>
     </div>
-    <div>
+    <ul>
       <% if current_user %>
-        <a href="/surveys">All Surveys</a>
-        <a href="/user/surveys">My Survey</a>
-        <a href="/logout">Log out</a>
+        <li><a href="/surveys">All Surveys</a></li>
+        <li><a href="/user/surveys">My Survey</a></li>
+        <li><a href="/logout">Log out</a></li>
       <% end %>
-    </div>
+    </ul>
   </header>
 
   <%= yield %>
