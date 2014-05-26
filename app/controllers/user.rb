@@ -39,7 +39,7 @@ get '/user/:user_id' do
   user_id = params[:user_id].to_i
   if current_user.id == user_id
     @user = current_user
-    erb :owner_profile
+    erb :"/user/owner_profile"
   elsif current_user
     redirect to "/user/#{current_user.id}"
   else
@@ -55,11 +55,11 @@ end
 #   @user = User.find(user_id) if User.exists?(user_id)
 
 #   if @user == current_user
-#     erb :owner_profile
+#     erb :"/user/owner_profile"
 #   elsif @user
-#     erb :user_profile
+#     erb :"/user/user_profile"
 #   elsif current_user
-#     # erb :profile_does_not_exist
+#     # erb :"/user/profile_does_not_exist"
 #     redirect to '/'
 #   else
 #     redirect to '/'
@@ -74,12 +74,12 @@ end
 
 #   if @user && current_user
 #     if @user == current_user
-#       erb :owner_profile
+#       erb :"/user/owner_profile"
 #     else
-#       erb :user_profile
+#       erb :"/user/user_profile"
 #     end
 #   elsif current_user
-#     # erb :profile_does_not_exist
+#     # erb :"/user/profile_does_not_exist"
 #     redirect to '/'
 #   else
 #     redirect to '/'
