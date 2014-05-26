@@ -21,34 +21,32 @@ post '/survey/new' do
 
     params[:question].each do |key, question_value|
       question = Question.create(q_text: question_value, survey: new_survey)
-      params[:choice][key].split(",").each do |choice|
-        Option.create(o_text: choice, question: question)
+      params[:option][key].split(",").each do |option|
+        Option.create(o_text: option, question: question)
       end
     end
   end
-  redirect to "/survey/#{new_survey.title}"
+  redirect to "/surveys"
 end
 
 # ============ Show the questions and Options =============
 
 post '/survey/complete' do
-
   params[:option].each_value do |option|
     Response.create(option_id: option)
-    @survey_id = option.question_id
   end
-  survey_title = params[:title]
-  redirect "/survey/#{survey_title}/results"
+  survey_id = params[:survey_id]
+  redirect "/survey/#{survey_id}/results"
 end
 
-get '/survey/:title' do
-  @survey = Survey.find_by(title: params[:title])
+get '/survey/:survey_id' do
+  @survey = Survey.find(params[:survey_id])
   erb :"/survey/take_survey"
 end
 
 
 # ================= Survey Result ===================
-get '/survey/:title/results' do
-  @survey = Survey.find_by(title: params[:title])
+get '/survey/:survey_id/results' do
+  @survey = Survey.find(params[:survey_id])
   erb :"/survey/survey_result"
 end

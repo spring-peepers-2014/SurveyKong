@@ -1,15 +1,15 @@
 <div class="container">
   <h1><%= @survey.title %></h1>
-
+<!-- Survey.last.questions.last.options -->
   <form action="/survey/complete" method="post" class="question">
     <% @survey.questions.each do |question| %>
       <p>Question: <%= question.q_text %></p>
       <% question.options.each do |option| %>
-        <input type="radio" name="option[<%= question.q_text %>]" value="<%= option.id %>"> <%= option.o_text %>
+        <input type="radio" name="option[<%= question.q_text %>]" value="<%= option.id %>"><%= option.o_text %>
       <% end %>
     <% end %>
     <br><br><br><br>
-    <input type="hidden" value="<%= @survey.title %>" name="title">
+    <input type="hidden" value="<%= @survey.id %>" name="survey_id">
     <input type="submit" value="Submit">
   </form>
 
