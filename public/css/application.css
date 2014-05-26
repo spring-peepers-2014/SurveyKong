@@ -1,5 +1,5 @@
 html {
-  font-family: 'Anton', sans-serif;
+  font-family: 'Droid Sans', sans-serif;
 }
 body {
 	background: url('/tree_bark.png');
@@ -9,7 +9,7 @@ body {
   margin: 100px auto;
   width: 720px;
   padding: 0px 20px 20px 20px;
-  border: 1px dotted black;
+  border: 12px solid rgba(255,255,255,0.3);
   background-color: #6D57B3;
   border-radius: 20px;
 }
@@ -22,7 +22,7 @@ body {
 
 #enter {
 	text-align: center;
-	postion: relative;
+	position: relative;
 	top: 10px;
 	right: 0;
 }
@@ -36,7 +36,8 @@ header {
 	line-height: 56px;
 	position: fixed;
 	top: 0;
-	letter-spacing: .1em
+	letter-spacing: .1em;
+	font-family: 'Anton', sans-serif;
 }
 
 header div:first-of-type {
@@ -88,12 +89,54 @@ a, li {
 	border-radius: 20px;
 }
 
-/* Sign in & Sign up ================================ */
+h1, h2, h3 {
+	color: white;
+}
 
 h2 {
 	margin-top: 90px;
 	text-align: center;
 }
+
+input {
+	padding: 10px;
+	border-radius: 10px;
+}
+
+input[type="submit"] {
+background: rgb(57,16,82);
+background: -moz-linear-gradient(top,  rgba(57,16,82,1) 0%, rgba(41,4,60,1) 50%, rgba(67,10,88,1) 100%);
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(57,16,82,1)), color-stop(50%,rgba(41,4,60,1)), color-stop(100%,rgba(67,10,88,1)));
+background: -webkit-linear-gradient(top,  rgba(57,16,82,1) 0%,rgba(41,4,60,1) 50%,rgba(67,10,88,1) 100%);
+background: -o-linear-gradient(top,  rgba(57,16,82,1) 0%,rgba(41,4,60,1) 50%,rgba(67,10,88,1) 100%);
+background: -ms-linear-gradient(top,  rgba(57,16,82,1) 0%,rgba(41,4,60,1) 50%,rgba(67,10,88,1) 100%);
+background: linear-gradient(to bottom,  rgba(57,16,82,1) 0%,rgba(41,4,60,1) 50%,rgba(67,10,88,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#391052', endColorstr='#430a58',GradientType=0 );
+
+border: 2px solid rgba(255,255,255,0.1);
+border-radius: 10px;
+color: white;
+padding: .5em;
+font-size: 1.5em;
+font-family: 'Anton', sans-serif;
+letter-spacing: 0.1em;
+}
+
+input[type="submit"]:hover {
+	background: rgb(96,27,139);
+background: -moz-linear-gradient(top,  rgba(96,27,139,1) 0%, rgba(70,7,101,1) 50%, rgba(113,16,148,1) 100%);
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(96,27,139,1)), color-stop(50%,rgba(70,7,101,1)), color-stop(100%,rgba(113,16,148,1)));
+background: -webkit-linear-gradient(top,  rgba(96,27,139,1) 0%,rgba(70,7,101,1) 50%,rgba(113,16,148,1) 100%);
+background: -o-linear-gradient(top,  rgba(96,27,139,1) 0%,rgba(70,7,101,1) 50%,rgba(113,16,148,1) 100%);
+background: -ms-linear-gradient(top,  rgba(96,27,139,1) 0%,rgba(70,7,101,1) 50%,rgba(113,16,148,1) 100%);
+background: linear-gradient(to bottom,  rgba(96,27,139,1) 0%,rgba(70,7,101,1) 50%,rgba(113,16,148,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#601b8b', endColorstr='#711094',GradientType=0 );
+
+}
+
+
+/* Sign in & Sign up ================================ */
+
 .sign input {
 	width: 90%;
 	margin: 10px 0;
@@ -103,7 +146,7 @@ h2 {
 	/* Safari and Chrome */
 	-webkit-column-count:2;
 	-webkit-column-gap:50px;
-	-webkit-column-rule: 4px outset #ff00ff;
+	-webkit-column-rule: 4px outset #9888C9;
 }
 
 .question {
