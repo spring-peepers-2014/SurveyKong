@@ -8,26 +8,7 @@ get '/surveys' do
 end
 
 
-
-# =============== Survey User created =====================
-
-get '/user/surveys' do
-
-  @surveys = Survey.find_by(user_id: session[:user_id])
-
-  erb :user_profile
-end
-
-
-# ============ Show the questions and Optoins =============
-
-get '/survey/:title' do
-
-  @survey = Survey.find_by(title: params[:title])
-
-  erb :survey_questions
-end
-
+# ============ Show the questions and Options =============
 
 post '/survey/completed' do
 
@@ -36,6 +17,13 @@ post '/survey/completed' do
   end
 
   redirect '/surveys'
+end
+
+get '/survey/:title' do
+
+  @survey = Survey.find_by(title: params[:title])
+
+  erb :survey_questions
 end
 
 

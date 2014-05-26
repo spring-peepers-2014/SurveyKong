@@ -1,0 +1,12 @@
+<div class="container">
+
+<h1>Profile for <%= current_user.get_name %></h1>
+  <h2>Surveys</h2>
+
+  <ul>
+    <% @surveys.each do |survey| %>
+    <li><a href="/survey/<%= survey.id %>"><%= survey.title %></a></li>
+    <% end %>
+  </ul>
+
+</div>

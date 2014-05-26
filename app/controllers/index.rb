@@ -1,6 +1,7 @@
 get '/' do
-
-  @surveys = Survey.all
-
-  erb :index
+  if current_user
+    redirect to "user/#{current_user.id}"
+  else
+    erb :index
+  end
 end

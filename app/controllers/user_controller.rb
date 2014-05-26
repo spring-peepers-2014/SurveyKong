@@ -1,15 +1,11 @@
+# ================= Sign up =================================
 
-
-# ================= User Sign In & Sign up page ======================
-
-get '/login' do
-  erb :user_sign_in_up
-end
-
-# ================= User Sign UP =================================
-
-post '/sign_up' do
-  user = User.new(params[:signup])
+post '/user/new' do
+  user_info = { first_name: params[:first_name],
+                last_name: params[:last_name],
+                email: params[:email],
+                password: params[:password] }
+  user = User.new(user_info)
 
   if user.save
     session[:user_id] = user.id
@@ -19,40 +15,44 @@ post '/sign_up' do
   end
 end
 
-# ================= User Sign In =================================
+# ================= Sign In =================================
 
-post '/sign_in' do
-  user = User.authenticate(params[:signin])
+post '/login' do
+  user_info = { email: params[:email],
+                password: params[:password] }
+
+  user = User.authenticate(user_info)
 
   if user
     session[:user_id] = user.id
-    redirect to "/user/surveys"
+    redirect to "/user/#{user.id}"
   else
-    redirect '/login'
+    redirect '/'
   end
 end
 
-# ================ User Log Out ================================
+# ================ Log Out ================================
 
-delete '/logout' do
+post '/logout' do
 
-  session.clear
+  session[:user_id] = nil
 
   redirect to '/'
 end
 
 # Logged in users can view own profile only
-# get '/user/:user_id' do
-#   user_id = params[:user_id].to_i
-#   if current_user.id == user_id
-#     @user = current_user
-#     erb :owner_profile
-#   elsif current_user
-#     redirect to "/user/#{current_user.id}"
-#   else
-#     redirect to '/'
-#   end
-# end
+get '/user/:user_id' do
+  @surveys = Survey.all
+  user_id = params[:user_id].to_i
+  if current_user.id == user_id
+    @user = current_user
+    erb :owner_profile
+  elsif current_user
+    redirect to "/user/#{current_user.id}"
+  else
+    redirect to '/'
+  end
+end
 
 # Anyone can view user profiles
 # Logged in users can view own profile with additional features
@@ -98,8 +98,8 @@ end
 #   redirect to '/'
 # end
 
-# # for development debugging only
-# get '/logout' do
-#   session[:user_id] = nil
-#   redirect to '/'
-# end
+# for development debugging only
+get '/logout' do
+  session[:user_id] = nil
+  redirect to '/'
+end
