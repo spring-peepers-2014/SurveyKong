@@ -98,6 +98,11 @@ h2 {
 	text-align: center;
 }
 
+input {
+	padding: 10px;
+	border-radius: 10px;
+}
+
 input[type="submit"] {
 background: rgb(57,16,82);
 background: -moz-linear-gradient(top,  rgba(57,16,82,1) 0%, rgba(41,4,60,1) 50%, rgba(67,10,88,1) 100%);
