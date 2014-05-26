@@ -5,7 +5,7 @@ post '/user/new' do
 
   if user.save
     session[:user_id] = user.id
-    redirect to "/surveys"
+    redirect to "/user/#{session[:user_id]}"
   else
     redirect to '/login'
   end
